@@ -7,6 +7,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
       - name: Get Architecture Dependencies
         run: |
           sudo apt-get update
@@ -25,4 +30,5 @@ jobs:
         with:
           name: Jarvis-Android-Package
           path: bin/*.apk
+          
           
